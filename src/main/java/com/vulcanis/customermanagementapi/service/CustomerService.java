@@ -3,7 +3,6 @@ package com.vulcanis.customermanagementapi.service;
 import com.vulcanis.customermanagementapi.model.Customer;
 import com.vulcanis.customermanagementapi.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -38,8 +37,10 @@ public class CustomerService {
             Customer updatedCustomer = optionalCustomer.get();
             String updateFullName = customer.getFullName();
             LocalDate updateBirthDate = customer.getBirthDate();
+            String updateEmail = customer.getEmail();
             updatedCustomer.setBirthDate(updateBirthDate);
             updatedCustomer.setFullName(updateFullName);
+            updatedCustomer.setEmail(updateEmail);
             customerRepository.save(updatedCustomer);
             return Optional.of(updatedCustomer);
         }
