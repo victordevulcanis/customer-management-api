@@ -1,6 +1,5 @@
 package com.vulcanis.customermanagementapi.model;
 
-import com.vulcanis.customermanagementapi.repository.CustomerRepository;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +21,7 @@ public class Customer {
     private Long id;
     private String fullName;
     private LocalDate birthDate;
+    private String email;
 
     public Customer(){
 
